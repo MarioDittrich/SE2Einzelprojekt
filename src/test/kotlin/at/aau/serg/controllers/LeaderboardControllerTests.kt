@@ -49,9 +49,11 @@ class LeaderboardControllerTests {
 
         verify(mockedService).getGameResults()
         assertEquals(3, res.size)
-        assertEquals(first, res[0])
-        assertEquals(second, res[1])
-        assertEquals(third, res[2])
+        assertEquals(second, res[0])
+        assertEquals(third, res[1])
+        assertEquals(first, res[2])
+        // corrected assertions for new leaderboard sorting (score, then by time).
+        // all have score 20, but "second" has the shortest duration, so he is actually first place.
     }
 
 }
